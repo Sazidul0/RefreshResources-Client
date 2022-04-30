@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "Stylish Shirt",
+        "img": "https://i.ibb.co/x7RZPr0/shirt01.jpg",
+        "description": "Stylish Shirt for man, Sizes in stock - M, L, XL, 2XL",
+        "price": 19,
+        "quantiy": 56,
+        "supplierName": "John Smith"
+    },
+    {
+        "id": 2,
+        "name": "Formal Shart",
+        "img": "https://i.ibb.co/0Jt1NF6/Shirt02.png",
+        "description": "Formal White shirt for man, Sizes in stock - M, L, XL",
+        "price": 31,
+        "quantiy": 86,
+        "supplierName": "Steave Rogers"
+    },
+    {
+        "id": 3,
+        "name": "Shart",
+        "img": "https://i.ibb.co/Tcd3tn2/shirt03.png",
+        "description": "Blue Shirt for man, Sizes in stock - M, L, XL, 2XL",
+        "price": 120,
+        "quantiy": 21,
+        "supplierName": "Alyssa Ambr"
+    },
+    {
+        "id": 4,
+        "name": "Stylish Jeans",
+        "img": "https://i.ibb.co/TkngnVY/pant001.png",
+        "description": "Ash color Jeans pant for man, Sizes in stock - from 27 to 40",
+        "price": 120,
+        "quantiy": 231,
+        "supplierName": "Allison Aurora"
+    },
+    {
+        "id": 5,
+        "name": "Soft Jeans",
+        "img": "https://i.ibb.co/SPmW08N/pant002.png",
+        "description": "Blue soft jeans pant for man, Sizes in stock - from 26 to 38",
+        "price": 23,
+        "quantiy": 198,
+        "supplierName": "Alice Audrey"
+    },
+    {
+        "id": 6,
+        "name": "Black Jeans",
+        "img": "https://i.ibb.co/gDbNgjZ/pant003.png",
+        "description": "Black stylish jeans for man, Sizes in stock - from 26 to 42",
+        "price": 43,
+        "quantiy": 77,
+        "supplierName": "Amelia Avery"
+    },
+    {
+        "id": 7,
+        "name": "Red Nike",
+        "img": "https://i.ibb.co/VxbRC0c/shoe001.png",
+        "description": "Red Nike for man and woman, Sizes in stock - from 7 to 16",
+        "price": 120,
+        "quantiy": 32,
+        "supplierName": "Riley Jacson"
+    },
+    {
+        "id": 8,
+        "name": "Athletic Shoe",
+        "img": "https://i.ibb.co/Tt4pg6C/shoe002.png",
+        "description": "High quality athletic show for players, Sizes in stock - from 8 to 13",
+        "price": 144,
+        "quantiy": 19,
+        "supplierName": "Mechel Scout"
+    },
+    {
+        "id": 9,
+        "name": "Running Shoe",
+        "img": "https://i.ibb.co/6cMtb51/shoe003.png",
+        "description": "Nike running shoe for man and woman, Sizes in stock - from 7 to 16",
+        "price": 129,
+        "quantiy": 36,
+        "supplierName": "Locifer Morningstar"
+    },
+    {
+        "id": 10,
+        "name": "T-Shart",
+        "img": "https://i.ibb.co/k0LFFhv/real-Madrit10.png",
+        "description": "Real Madrit t-shart for man and woman, Sizes in stock - M, L, XL",
+        "price": 30,
+        "quantiy": 259,
+        "supplierName": "Wiliam Sivana"
+    }
+]
