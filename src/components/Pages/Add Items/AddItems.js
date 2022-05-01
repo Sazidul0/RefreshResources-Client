@@ -1,41 +1,62 @@
 
-import React from 'react';
+
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
+import { useForm } from 'react-hook-form'
 
 const AddItems = () => {
+
+    const { register, handleSubmit } = useForm();
+
+    const onSubmit = data => {
+        console.log(data);
+        const url = `http://localhost:5000/items`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            })
+    }
+
+
+
     return (
         <div>
             <h2 className='text-center pt-5'>Add an Item</h2>
-            <Form className='w-50 mx-auto' >
+            <Form className='w-50 mx-auto' onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group className="mb-3" controlId="formBasicName">
 
-                    <Form.Control type="text" placeholder="Enter Item Name" required />
+                    <Form.Control  {...register("name")} type="text" placeholder="Enter Item Name" required />
 
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="description">
 
-                    {/* <Form.Control  type="text" placeholder="D" required /> */}
-                    {/* <textarea name="description" id="descriotion" cols="50" placeholder='Description' required></textarea> */}
+
                     <FloatingLabel controlId="floatingTextarea" label="Description" className="mb-3">
-                        <Form.Control as="textarea" placeholder="Leave a comment here" />
+                        <Form.Control  {...register("description")} as="textarea" placeholder="Leave a comment here" />
                     </FloatingLabel>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="url">
 
-                    <Form.Control type="text" placeholder="imageURL" required />
+                    <Form.Control  {...register("img")} type="text" placeholder="imageURL" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="price">
 
-                    <Form.Control type="number" placeholder="Price" required />
+                    <Form.Control  {...register("price")} type="number" placeholder="Price" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="quantity">
 
-                    <Form.Control type="number" placeholder="Quantity" required />
+                    <Form.Control  {...register("quantiy")} type="number" placeholder="Quantity" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="supplierName">
 
-                    <Form.Control type="text" placeholder="Enter Supplier Name" required />
+                    <Form.Control  {...register("supplierName")} type="text" placeholder="Enter Supplier Name" required />
 
                 </Form.Group>
 
