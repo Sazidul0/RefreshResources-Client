@@ -13,7 +13,7 @@ const ManageInventory = () => {
             </div>
             <div className='container items-container'>
                 {
-                    items.map(item => <ManageInventoryItem key={item.id} item={item}></ManageInventoryItem>)
+                    items.map(item => <ManageInventoryItem key={item._id} item={item}></ManageInventoryItem>)
                 }
             </div>
         </div>

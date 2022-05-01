@@ -3,11 +3,11 @@ import { Button, Card, CardGroup } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const Item = (props) => {
-    const { name, img, price, description, quantiy, supplierName } = props.item;
+    const { _id, name, img, price, description, quantiy, supplierName } = props.item;
     const navigate = useNavigate();
 
-    const navigateToCollectionDetail = name => {
-        navigate(`/collection/${name}`);
+    const navigateToCollectionDetail = id => {
+        navigate(`/collection/${id}`);
     }
 
     return (
@@ -29,7 +29,7 @@ const Item = (props) => {
                         <Card.Text>
                             <b> Supplier Name:</b> {supplierName}
                         </Card.Text>
-                        <Button onClick={() => navigateToCollectionDetail(name)} variant="dark">{name}</Button>
+                        <Button onClick={() => navigateToCollectionDetail(_id)} variant="dark">{name}</Button>
 
                     </Card.Body>
 

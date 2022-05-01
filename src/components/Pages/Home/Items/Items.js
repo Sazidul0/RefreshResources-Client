@@ -20,7 +20,7 @@ const Items = () => {
             <div className='container items-container'>
 
                 {
-                    items.map(item => <Item key={item.id} item={item}></Item>)
+                    items.map(item => <Item key={item._id} item={item}></Item>)
                 }
 
             </div>
