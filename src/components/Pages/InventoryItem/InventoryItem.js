@@ -2,9 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
+import useItems from '../../../hooks/useItems';
 
 
 const InventoryItem = () => {
+    const [items, setItems] = useItems();
+
     const { collectionId } = useParams();
     const [item, setItem] = useState({});
 
@@ -14,6 +17,35 @@ const InventoryItem = () => {
             .then(res => res.json())
             .then(data => setItem(data));
     }, [])
+
+
+
+
+    const handleUpdateQuantity = event => {
+        event.preventDefault();
+        const quantiy = event.target.quantity.value
+
+        const updatedUser = { quantiy };
+        // Update data to the Server
+        const url = `http://localhost:5000/items/${collectionId}`
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(updatedUser)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log('Success', result);
+                event.target.reset();
+                const remaining = items.filter(newitem => newitem._id === collectionId);
+                setItem(remaining);
+            })
+
+    }
+
+
 
     return (
 
@@ -44,11 +76,11 @@ const InventoryItem = () => {
                     </div>
                 </div>
 
-                <form className=''>
+                <form className='' onSubmit={handleUpdateQuantity}>
                     <h3>Restock: {item.name}</h3>
-                    <input type="number" name="quantity" id="quantity" placeholder='Quantity' required />
+                    <input type="number" name="quantity" id={item._id} placeholder='Quantity' required />
                     <br />
-                    <input className='mt-3 btn btn-dark' type="button" value="Update Quantity" />
+                    <input className='mt-3 btn btn-dark' type="submit" value="Update Quantity" />
                 </form>
             </div>
             <br />

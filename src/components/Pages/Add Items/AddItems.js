@@ -2,7 +2,7 @@
 
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form';
 
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
