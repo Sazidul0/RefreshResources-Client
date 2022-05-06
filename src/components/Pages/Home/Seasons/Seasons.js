@@ -3,12 +3,14 @@ import './Seasons.css'
 
 const Seasons = () => {
     return (
-        <div className='container'>
-            <h3 className='d-flex justify-content-center'>Recent posts</h3>
+        <div className='container mt-5 py-5'>
+            <h3 className=' d-flex justify-content-center'>Recent posts</h3>
             <div style={{ height: '1px' }} className='bg-dark mb-3'></div>
             <div className='seasons-container'>
                 <div>
-                    <img className='ms-2' src='https://iqit-commerce.com/ps16/modules/ph_simpleblog/covers/13-thumb.jpg' alt="" />
+                    <div className='d-flex justify-content-center'>
+                        <img className='' src='https://iqit-commerce.com/ps16/modules/ph_simpleblog/covers/13-thumb.jpg' alt="" />
+                    </div>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
                     <p className='d-flex justify-content-center'>Is Warehouse great?</p>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
@@ -16,7 +18,9 @@ const Seasons = () => {
                     <div style={{ height: '1px' }} className='bg-dark'></div>
                 </div>
                 <div>
-                    <img className='ms-2' src='https://iqit-commerce.com/ps16/modules/ph_simpleblog/covers/12-thumb.jpg' alt="" />
+                    <div className='d-flex justify-content-center'>
+                        <img className='' src='https://iqit-commerce.com/ps16/modules/ph_simpleblog/covers/12-thumb.jpg' alt="" />
+                    </div>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
                     <p className='d-flex justify-content-center'>Nobody knows</p>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
@@ -24,7 +28,9 @@ const Seasons = () => {
                     <div style={{ height: '1px' }} className='bg-dark'></div>
                 </div>
                 <div>
-                    <img className='ms-2' src='https://iqit-commerce.com/ps16/modules/ph_simpleblog/covers/11-thumb.jpg' alt="" />
+                    <div className='d-flex justify-content-center'>
+                        <img className='' src='https://iqit-commerce.com/ps16/modules/ph_simpleblog/covers/11-thumb.jpg' alt="" />
+                    </div>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
                     <p className='d-flex justify-content-center'>Your style is great</p>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
@@ -32,7 +38,9 @@ const Seasons = () => {
                     <div style={{ height: '1px' }} className='bg-dark'></div>
                 </div>
                 <div>
-                    <img className='ms-2' src='	https://iqit-commerce.com/ps16/modules/ph_simpleblog/covers/8-thumb.jpg' alt="" />
+                    <div className='d-flex justify-content-center'>
+                        <img className='' src='	https://iqit-commerce.com/ps16/modules/ph_simpleblog/covers/8-thumb.jpg' alt="" />
+                    </div>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
                     <p className='d-flex justify-content-center'>Time to change</p>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
