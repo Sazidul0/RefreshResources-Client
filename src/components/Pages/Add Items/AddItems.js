@@ -1,13 +1,21 @@
 
 
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form'
+
+import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 
 const AddItems = () => {
 
     const { register, handleSubmit } = useForm();
 
+    const [user] = useAuthState(auth);
+    console.log(user.email)
+
     const onSubmit = data => {
+
         console.log(data);
         const url = `http://localhost:5000/items`;
         fetch(url, {
@@ -19,9 +27,16 @@ const AddItems = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+
+                if (result.insertedId) {
+                    console.log("New Item Added");
+                    console.log('helo')
+                }
+
             })
     }
+
+
 
 
 
@@ -59,12 +74,18 @@ const AddItems = () => {
                     <Form.Control  {...register("supplierName")} type="text" placeholder="Enter Supplier Name" required />
 
                 </Form.Group>
+                <Form.Group className="mb-3" controlId="email">
+
+                    <Form.Control  {...register("email")} type="email" placeholder="Enter Your Email" value={user.email} />
+
+                </Form.Group>
 
                 <Button variant="dark" type="submit" className='d-block w-100 mt-4 mb-2'>
                     Add
                 </Button>
 
             </Form>
+
         </div>
     );
 };

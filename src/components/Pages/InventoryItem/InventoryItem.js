@@ -45,7 +45,7 @@ const InventoryItem = () => {
                 </div>
 
                 <form className=''>
-                    <h3>Restock {item.name}</h3>
+                    <h3>Restock: {item.name}</h3>
                     <input type="number" name="quantity" id="quantity" placeholder='Quantity' required />
                     <br />
                     <input className='mt-3 btn btn-dark' type="button" value="Update Quantity" />

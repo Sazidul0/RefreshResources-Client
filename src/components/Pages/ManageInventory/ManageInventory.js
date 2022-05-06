@@ -9,6 +9,8 @@ const ManageInventory = () => {
 
     const [items, setItems] = useItems();
 
+
+    // Delete Item from Manage Inventory
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {

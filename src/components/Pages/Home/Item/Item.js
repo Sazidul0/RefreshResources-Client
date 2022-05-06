@@ -29,7 +29,7 @@ const Item = (props) => {
                         <Card.Text>
                             <b> Supplier Name:</b> {supplierName}
                         </Card.Text>
-                        <Button onClick={() => navigateToCollectionDetail(_id)} variant="dark">{name}</Button>
+                        <Button onClick={() => navigateToCollectionDetail(_id)} variant="dark">Update</Button>
 
                     </Card.Body>
 
