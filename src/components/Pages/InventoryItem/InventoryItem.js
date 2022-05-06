@@ -2,11 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
-import useItems from '../../../hooks/useItems';
+
 
 
 const InventoryItem = () => {
-    const [items, setItems] = useItems();
+
 
     const { collectionId } = useParams();
     const [item, setItem] = useState({});
@@ -20,10 +20,7 @@ const InventoryItem = () => {
 
 
 
-
-    const handleUpdateQuantity = event => {
-        event.preventDefault();
-        const quantiy = event.target.quantity.value
+    const updateQuantityToServer = quantiy => {
 
         const updatedUser = { quantiy };
         // Update data to the Server
@@ -37,14 +34,31 @@ const InventoryItem = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log('Success', result);
-                event.target.reset();
-                const remaining = items.filter(newitem => newitem._id === collectionId);
-                setItem(remaining);
+
+                const { name, img, description, price, supplierName } = item;
+                setItem({ quantiy, name, img, description, price, supplierName });
+                if (result.modifiedCount) {
+                    console.log('Successfuly Updated Quantity')
+                }
             })
 
     }
 
+
+
+    const handleUpdateQuantity = event => {
+        event.preventDefault();
+        const quantiy = event.target.quantity.value
+        updateQuantityToServer(quantiy);
+        event.target.reset();
+
+    }
+
+
+    const handleDelevered = () => {
+        let quantiy = item.quantiy - 1;
+        updateQuantityToServer(quantiy);
+    }
 
 
     return (
@@ -72,7 +86,7 @@ const InventoryItem = () => {
                         </Card.Body>
                     </Card>
                     <div className='d-flex justify-content-center'>
-                        <button className='my-3 btn btn-dark'>Delevered</button>
+                        <button onClick={handleDelevered} className='my-3 btn btn-dark'>Delevered</button>
                     </div>
                 </div>
 

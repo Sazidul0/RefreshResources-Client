@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import Items from '../Items/Items';
+import Seasons from '../Seasons/Seasons';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
                 <Link className='btn btn-dark' to='/manageinventory'>Manage Invantory</Link>
             </div>
 
+            <Seasons></Seasons>
         </div>
     );
 };
