@@ -14,6 +14,7 @@ const MyItems = () => {
     const navigate = useNavigate();
     const [user, loading] = useAuthState(auth);
 
+
     const [items, setItems] = useState([]);
 
     // Delete Item from a particular email
@@ -35,17 +36,6 @@ const MyItems = () => {
         }
     }
 
-    // if (loading) {
-    //     return <Loading></Loading>
-    // }
-
-    // useEffect(() => {
-    //     const email = user.email;
-    //     const url = `http://localhost:5000/items?email=${email}`
-    //     fetch(url)
-    //         .then(res => res.json())
-    //         .then(data => setItems(data));
-    // }, [user])
 
     useEffect(() => {
 
@@ -71,6 +61,12 @@ const MyItems = () => {
 
         getItems();
     }, [user])
+
+
+
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     return (
         <div className='pt-4'>

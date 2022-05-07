@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './InventoryItem.css'
 
 
@@ -39,7 +41,7 @@ const InventoryItem = () => {
                 const { name, img, description, price, supplierName } = item;
                 setItem({ quantiy, name, img, description, price, supplierName });
                 if (result.modifiedCount) {
-                    console.log('Successfuly Updated Quantity')
+                    toast('Successfuly Updated Quantity')
                 }
             })
 

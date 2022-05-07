@@ -38,8 +38,8 @@ const Header = () => {
                         <Nav className='me-5'>
                             {
                                 user && <>
-                                    <Nav.Link className='me-4' eventKey={2} as={Link} to="/manageitems">
-                                        Manage Items
+                                    <Nav.Link className='me-4' eventKey={2} as={Link} to="/manageinventory">
+                                        Manage Inventory
                                     </Nav.Link>
                                     <Nav.Link className='me-4' eventKey={2} as={Link} to="/additem">
                                         Add Item

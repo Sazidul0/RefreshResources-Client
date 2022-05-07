@@ -3,6 +3,8 @@
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
@@ -11,8 +13,12 @@ const AddItems = () => {
 
     const { register, handleSubmit } = useForm();
 
-    const [user] = useAuthState(auth);
-    console.log(user.email)
+    const [user, loading] = useAuthState(auth);
+    // console.log(user.email)
+
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     const onSubmit = data => {
 
@@ -29,8 +35,8 @@ const AddItems = () => {
             .then(result => {
 
                 if (result.insertedId) {
-                    console.log("New Item Added");
-                    console.log('helo')
+                    toast("New Item Added");
+
                 }
 
             })

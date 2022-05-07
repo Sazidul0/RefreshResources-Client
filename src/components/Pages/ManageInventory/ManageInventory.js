@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Card, CardGroup } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import useItems from '../../../hooks/useItems';
 
 
@@ -21,7 +23,9 @@ const ManageInventory = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    // console.log(data)
+                    if (data.acknowledged) {
+                        toast('Dleted');
+                    }
                     const remaining = items.filter(newitem => newitem._id !== id);
                     setItems(remaining);
                 })

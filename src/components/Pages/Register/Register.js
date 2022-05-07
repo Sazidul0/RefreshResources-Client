@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../../firebase.init';
 import SocialLogIn from '../../Shared/SocialLogIn/SocialLogIn';
 
@@ -41,7 +43,7 @@ const Register = () => {
             createUserWithEmailAndPassword(email, password);
         }
         else {
-            console.log("Password and Confirm Password didn't matched");
+            toast("Password and Confirm Password didn't matched");
         }
     }
 
