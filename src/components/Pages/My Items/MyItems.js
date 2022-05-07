@@ -5,11 +5,13 @@ import Loading from '../../Shared/Loading/Loading'
 import axios from 'axios'
 import { Card, CardGroup } from 'react-bootstrap';
 import { Button } from 'bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
 
 
 
 const MyItems = () => {
-
+    const navigate = useNavigate();
     const [user, loading] = useAuthState(auth);
 
     const [items, setItems] = useState([]);
@@ -50,8 +52,21 @@ const MyItems = () => {
         const getItems = async () => {
             const email = await user?.email;
             const url = `http://localhost:5000/allitem?email=${email}`
-            const { data } = await axios.get(url);
-            setItems(data);
+            try {
+                const { data } = await axios.get(url, {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    }
+                });
+                setItems(data);
+            }
+            catch (error) {
+                console.log(error)
+                if (error.response.status === 401 || error.response.status === 403) {
+                    signOut(auth);
+                    navigate('/login');
+                }
+            }
         }
 
         getItems();

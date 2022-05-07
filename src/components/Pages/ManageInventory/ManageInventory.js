@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button, Card, CardGroup } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useItems from '../../../hooks/useItems';
 
 
 const ManageInventory = () => {
-
+    const navigate = useNavigate();
 
     const [items, setItems] = useItems();
 
@@ -26,6 +26,11 @@ const ManageInventory = () => {
                     setItems(remaining);
                 })
         }
+    }
+
+
+    const navigateToCollectionDetail = id => {
+        navigate(`/collection/${id}`);
     }
 
 
@@ -55,7 +60,7 @@ const ManageInventory = () => {
                                     <Card.Text>
                                         <b> Supplier Name:</b> {item.supplierName}
                                     </Card.Text>
-                                    <Button className='me-5' variant="dark">{item.name}</Button>
+                                    <Button onClick={() => navigateToCollectionDetail(item._id)} className='me-5' variant="dark">{item.name}</Button>
                                     <Button className='ms-5' variant="danger" onClick={() => handleDelete(item._id)}>Delete</Button>
 
                                 </Card.Body>

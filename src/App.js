@@ -13,6 +13,7 @@ import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
 import RequireAuth from './components/Shared/RequireAuth/RequireAuth';
 import { ToastContainer } from 'react-toastify'
+import PageNotFound from './components/Pages/PageNotFound/PageNotFound';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <InventoryItem></InventoryItem>
           </RequireAuth>
         }></Route>
+        <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer />

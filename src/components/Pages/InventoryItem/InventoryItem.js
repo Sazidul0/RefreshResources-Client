@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
+import './InventoryItem.css'
 
 
 
@@ -90,12 +91,14 @@ const InventoryItem = () => {
                     </div>
                 </div>
 
-                <form className='' onSubmit={handleUpdateQuantity}>
-                    <h3>Restock: {item.name}</h3>
-                    <input type="number" name="quantity" id={item._id} placeholder='Quantity' required />
-                    <br />
-                    <input className='mt-3 btn btn-dark' type="submit" value="Update Quantity" />
-                </form>
+                <div className='d-flex align-items-center restock-quantity-container'>
+                    <form className='' onSubmit={handleUpdateQuantity}>
+                        <h3>Restock: {item.name}</h3>
+                        <input type="number" name="quantity" id={item._id} placeholder='Quantity' required />
+                        <br />
+                        <input className='mt-3 btn btn-dark' type="submit" value="Update Quantity" />
+                    </form>
+                </div>
             </div>
             <br />
             <div className='d-flex justify-content-center'>

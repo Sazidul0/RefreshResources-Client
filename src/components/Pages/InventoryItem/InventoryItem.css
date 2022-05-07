@@ -1,7 +1,15 @@
 /* Responsive  */
-/* @media only screen and (max-width: 576px) {
+@media only screen and (max-width: 576px) {
     .inventory-container {
 
-        flex-direction: row-reverse !important;
+        flex-direction: column !important;
+        margin-left: 25px;
     }
-} */
+
+    .restock-quantity-container {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+    }
+}

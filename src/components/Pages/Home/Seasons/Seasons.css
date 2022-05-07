@@ -8,6 +8,7 @@
 @media only screen and (max-width: 576px) {
     .seasons-container {
         grid-template-columns: repeat(1, 1fr);
+
     }
 }
 
