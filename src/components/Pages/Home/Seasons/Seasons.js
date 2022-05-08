@@ -14,7 +14,7 @@ const Seasons = () => {
                     <div style={{ height: '1px' }} className='bg-dark'></div>
                     <p className='d-flex justify-content-center'>Is Warehouse great?</p>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a diam odio. Nulla posuere ultricies laoreet. </p>
+                    <p>Discover our range of autumn clothing & shoes at Refresh Resources. Shop essential items you need to update your autumn wardrobe .</p>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
                 </div>
                 <div>
@@ -24,7 +24,7 @@ const Seasons = () => {
                     <div style={{ height: '1px' }} className='bg-dark'></div>
                     <p className='d-flex justify-content-center'>Nobody knows</p>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a diam odio. Nulla posuere ultricies laoreet. </p>
+                    <p> Fabrics like cotton, eyelet, tropical wool and linen are the most commonly used for spring dresses. For more visit our spring collection. </p>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
                 </div>
                 <div>
@@ -34,7 +34,7 @@ const Seasons = () => {
                     <div style={{ height: '1px' }} className='bg-dark'></div>
                     <p className='d-flex justify-content-center'>Your style is great</p>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a diam odio. Nulla posuere ultricies laoreet. </p>
+                    <p>This season take the heat with open arms by falling for the summer clothing collection and its lightweight, flowing and comfortable clothes. </p>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
                 </div>
                 <div>
@@ -44,7 +44,7 @@ const Seasons = () => {
                     <div style={{ height: '1px' }} className='bg-dark'></div>
                     <p className='d-flex justify-content-center'>Time to change</p>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a diam odio. Nulla posuere ultricies laoreet. </p>
+                    <p>Winter clothes are especially outerwear like coats, jackets, hats, scarves and gloves or mittens, earmuffs, but also warm like union suits and socks. </p>
                     <div style={{ height: '1px' }} className='bg-dark'></div>
                 </div>
             </div>

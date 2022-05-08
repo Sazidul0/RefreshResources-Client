@@ -14,6 +14,7 @@ import Header from './components/Shared/Header/Header';
 import RequireAuth from './components/Shared/RequireAuth/RequireAuth';
 import { ToastContainer } from 'react-toastify'
 import PageNotFound from './components/Pages/PageNotFound/PageNotFound';
+import About from './components/Pages/About/About';
 
 function App() {
   return (
@@ -24,12 +25,17 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/about' element={<About></About>}></Route>
         <Route path='/manageinventory' element={
           <RequireAuth>
             <ManageInventory></ManageInventory>
           </RequireAuth>
         }></Route>
-        <Route path='/additem' element={<AddItems></AddItems>}></Route>
+        <Route path='/additem' element={
+          <RequireAuth>
+            <AddItems></AddItems>
+          </RequireAuth>
+        }></Route>
         <Route path='/myitems' element={<MyItems></MyItems>}></Route>
         <Route path='/collection/:collectionId' element={
           <RequireAuth>

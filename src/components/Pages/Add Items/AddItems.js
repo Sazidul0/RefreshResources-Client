@@ -3,6 +3,7 @@
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -10,6 +11,8 @@ import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 
 const AddItems = () => {
+
+    const navigate = useNavigate();
 
     const { register, handleSubmit } = useForm();
 
@@ -22,8 +25,8 @@ const AddItems = () => {
 
     const onSubmit = data => {
 
-        console.log(data);
-        const url = `http://localhost:5000/items`;
+        // console.log(data);
+        const url = `https://ancient-hamlet-40943.herokuapp.com/items`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -36,7 +39,7 @@ const AddItems = () => {
 
                 if (result.insertedId) {
                     toast("New Item Added");
-
+                    navigate('/myitems');
                 }
 
             })

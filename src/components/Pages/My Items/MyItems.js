@@ -4,9 +4,11 @@ import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading'
 import axios from 'axios'
 import { Card, CardGroup } from 'react-bootstrap';
-import { Button } from 'bootstrap';
+
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -21,15 +23,17 @@ const MyItems = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            console.log(id);
-            const url = `http://localhost:5000/items/${id}`;
+
+            const url = `https://ancient-hamlet-40943.herokuapp.com/items/${id}`;
 
             fetch(url, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
-                    // console.log(data)
+                    if (data.acknowledged) {
+                        toast("Deleted")
+                    }
                     const remaining = items.filter(newitem => newitem._id !== id);
                     setItems(remaining);
                 })
@@ -41,7 +45,7 @@ const MyItems = () => {
 
         const getItems = async () => {
             const email = await user?.email;
-            const url = `http://localhost:5000/allitem?email=${email}`
+            const url = `https://ancient-hamlet-40943.herokuapp.com/allitem?email=${email}`
             try {
                 const { data } = await axios.get(url, {
                     headers: {
@@ -50,7 +54,11 @@ const MyItems = () => {
                 });
                 setItems(data);
             }
+
             catch (error) {
+                if (loading) {
+                    return <Loading></Loading>
+                }
                 console.log(error)
                 if (error.response.status === 401 || error.response.status === 403) {
                     signOut(auth);
@@ -64,9 +72,7 @@ const MyItems = () => {
 
 
 
-    if (loading) {
-        return <Loading></Loading>
-    }
+
 
     return (
         <div className='pt-4'>

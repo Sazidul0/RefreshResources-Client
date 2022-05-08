@@ -6,6 +6,7 @@ import './Login.css'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
 import auth from '../../../firebase.init'
 import axios from 'axios';
+import useToken from '../../../hooks/useToken';
 
 const Login = () => {
 
@@ -15,13 +16,14 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [token] = useToken(user);
     const location = useLocation();
     const navigate = useNavigate();
 
     let from = location.state?.from?.pathname || '/';
 
-    if (user) {
-        // navigate(from, { replace: true });
+    if (token) {
+        navigate(from, { replace: true });
     }
 
     let errorElement;
@@ -38,9 +40,9 @@ const Login = () => {
         const password = passwordRef.current.value;
 
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post('http://localhost:5000/login', { email });
-        localStorage.setItem('accessToken', data.accessToken);
-        navigate(from, { replace: true });
+        // const { data } = await axios.post('https://ancient-hamlet-40943.herokuapp.com/login', { email });
+        // localStorage.setItem('accessToken', data.accessToken);
+
     }
 
     return (

@@ -15,7 +15,7 @@ const InventoryItem = () => {
     const [item, setItem] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/items/${collectionId}`;
+        const url = `https://ancient-hamlet-40943.herokuapp.com/items/${collectionId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data));
@@ -27,7 +27,7 @@ const InventoryItem = () => {
 
         const updatedUser = { quantiy };
         // Update data to the Server
-        const url = `http://localhost:5000/items/${collectionId}`
+        const url = `https://ancient-hamlet-40943.herokuapp.com/items/${collectionId}`
         fetch(url, {
             method: 'PUT',
             headers: {

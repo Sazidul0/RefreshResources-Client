@@ -5,12 +5,14 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../Loading/Loading';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../../hooks/useToken';
 
 const SocialLogIn = () => {
 
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const location = useLocation();
     const navigate = useNavigate();
+    const [token] = useToken(user);
 
     let errorElement;
     if (error) {
@@ -25,7 +27,7 @@ const SocialLogIn = () => {
 
     let from = location.state?.from?.pathname || '/';
 
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     }
 
@@ -42,12 +44,7 @@ const SocialLogIn = () => {
                 <img style={{ width: '30px' }} src={google} alt="" />
                 <span className='px-3'>Google Sign In</span>
             </button>
-            <button
-                // onClick={() => signInWithGithub()}
-                className='btn btn-dark0 w-50 d-block mx-auto my-2'>
-                <img className='rounded' style={{ width: '30px' }} src={github} alt="" />
-                <span className='px-3'>Github Sign In</span>
-            </button>
+
 
             {errorElement}
         </div>

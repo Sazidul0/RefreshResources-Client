@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../../firebase.init';
+import useToken from '../../../hooks/useToken';
 import SocialLogIn from '../../Shared/SocialLogIn/SocialLogIn';
 
 const Register = () => {
@@ -17,6 +18,7 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const location = useLocation();
     const navigate = useNavigate();
+    const [token] = useToken(user);
 
     let errorElement;
     if (error) {
@@ -25,7 +27,7 @@ const Register = () => {
 
     let from = location.state?.from?.pathname || '/';
 
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     }
 

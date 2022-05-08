@@ -16,7 +16,7 @@ const ManageInventory = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/items/${id}`;
+            const url = `https://ancient-hamlet-40943.herokuapp.com/items/${id}`;
 
             fetch(url, {
                 method: 'DELETE'
@@ -64,7 +64,7 @@ const ManageInventory = () => {
                                     <Card.Text>
                                         <b> Supplier Name:</b> {item.supplierName}
                                     </Card.Text>
-                                    <Button onClick={() => navigateToCollectionDetail(item._id)} className='me-5' variant="dark">{item.name}</Button>
+                                    <Button onClick={() => navigateToCollectionDetail(item._id)} className='me-5' variant="dark">Update</Button>
                                     <Button className='ms-5' variant="danger" onClick={() => handleDelete(item._id)}>Delete</Button>
 
                                 </Card.Body>
