@@ -1,0 +1,12 @@
+/* Responsive */
+@media only screen and (max-width: 576px) {
+    .card-container {
+        height: 640px !important;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .card-container {
+        height: 640px !important;
+    }
+}

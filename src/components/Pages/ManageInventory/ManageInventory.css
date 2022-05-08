@@ -1,0 +1,12 @@
+/* Responsive */
+@media only screen and (max-width: 576px) {
+    .add-new-item-btn {
+        margin-top: 50px;
+        margin-right: 120px !important;
+    }
+
+    .manage-cardgroup-container {
+        margin-top: 50px;
+    }
+
+}

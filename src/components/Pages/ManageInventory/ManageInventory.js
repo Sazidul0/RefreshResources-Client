@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useItems from '../../../hooks/useItems';
+import './ManageInventory.css'
 
 
 const ManageInventory = () => {
@@ -42,13 +43,15 @@ const ManageInventory = () => {
         <div>
             <div className='position-relative container'>
                 <h2 className='text-center pt-5 pb-4'>Manage Inventory</h2>
-                <Link to='/additem' className=' btn btn-dark position-absolute top-50 end-0'>Add New Item</Link>
+                <div className='add-new-item-container'>
+                    <Link to='/additem' className=' btn btn-dark position-absolute top-50 end-0 add-new-item-btn'>Add New Item</Link>
+                </div>
             </div>
             <div className='container items-container'>
                 {
                     items.map(item => <div key={item._id}>
-                        <CardGroup className=''>
-                            <Card>
+                        <CardGroup className='manage-cardgroup-container'>
+                            <Card style={{ height: '700px' }} className='card-container'>
                                 <Card.Img variant="top" src={item.img} className='' />
                                 <Card.Body>
                                     <Card.Title className=''><b>{item.name}</b></Card.Title>

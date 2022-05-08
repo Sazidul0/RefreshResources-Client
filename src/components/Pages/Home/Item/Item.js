@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, CardGroup } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import './Item.css'
 
 const Item = (props) => {
     const { _id, name, img, price, description, quantiy, supplierName } = props.item;
@@ -13,7 +14,7 @@ const Item = (props) => {
     return (
         <div>
             <CardGroup className=''>
-                <Card>
+                <Card style={{ height: '700px' }} className='card-container'>
                     <Card.Img variant="top" src={img} className='' />
                     <Card.Body>
                         <Card.Title className=''><b>{name}</b></Card.Title>
