@@ -14,9 +14,9 @@ const Item = (props) => {
     return (
         <div>
             <CardGroup className=''>
-                <Card style={{ height: '700px' }} className='card-container'>
-                    <Card.Img variant="top" src={img} className='' />
-                    <Card.Body>
+                <Card className='card-container per-item-container shadow border-0'>
+                    <Card.Img variant="top" src={img} className='per-item-image' />
+                    <Card.Body className='ms-3'>
                         <Card.Title className=''><b>{name}</b></Card.Title>
                         <Card.Text>
                             {description}
@@ -30,7 +30,7 @@ const Item = (props) => {
                         <Card.Text>
                             <b> Supplier Name:</b> {supplierName}
                         </Card.Text>
-                        <Button onClick={() => navigateToCollectionDetail(_id)} variant="dark">Update</Button>
+                        <Button className='mb-3' onClick={() => navigateToCollectionDetail(_id)} variant="dark">Update</Button>
 
                     </Card.Body>
 

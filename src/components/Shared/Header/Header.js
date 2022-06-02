@@ -23,9 +23,9 @@ const Header = () => {
                         <span className='header-title'>Refresh Resources</span>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
+                    <Navbar.Collapse id="responsive-navbar-nav ">
 
-                        <Nav className="me-auto">
+                        <Nav className="mx-5 ps-5">
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
                         </Nav>
                         <Nav className='me-5'>
@@ -50,7 +50,7 @@ const Header = () => {
                                 </>
                             }
                         </Nav>
-                        <Nav>
+                        <Nav className='log-in'>
                             {
                                 user ?
                                     <button className='btn btn-dark' onClick={handleSignOut}>Sign Out</button>

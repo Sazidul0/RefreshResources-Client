@@ -51,16 +51,16 @@ const Login = () => {
             <Form className='w-50 mx-auto' onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+                    <Form.Control className='input-field' ref={emailRef} type="email" placeholder="Enter email" required />
 
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
+                    <Form.Control className='input-field' ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
 
-                <Button variant="dark" type="submit" className='d-block w-100 mt-4 mb-2'>
+                <Button variant="dark" type="submit" className='d-block w-100 mt-4 mb-2 login-register-btn'>
                     Log In
                 </Button>
                 {errorElement}

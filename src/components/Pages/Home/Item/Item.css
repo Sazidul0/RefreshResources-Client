@@ -1,12 +1,17 @@
-/* Responsive */
-@media only screen and (max-width: 576px) {
-    .card-container {
-        height: 640px !important;
-    }
+.per-item-container {
+    border-radius: 15px;
 }
+
+.per-item-image {
+    border-radius: 15px 15px 0 0;
+}
+
+
+/* Responsive */
+
 
 @media only screen and (min-width: 577px) and (max-width: 992px) {
     .card-container {
-        height: 640px !important;
+        height: 630px !important;
     }
 }

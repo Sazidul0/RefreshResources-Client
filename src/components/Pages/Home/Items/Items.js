@@ -15,7 +15,7 @@ const Items = () => {
     }
 
     return (
-        <div>
+        <div className='pb-3'>
             <h2 className='d-flex justify-content-center items-header'>Collections</h2>
             <div className='container items-container'>
 

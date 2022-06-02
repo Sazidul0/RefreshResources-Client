@@ -1,3 +1,13 @@
 .login-container {
     margin-top: 120px;
 }
+
+.input-field {
+    border-radius: 8px;
+    height: 45px;
+}
+
+.login-register-btn {
+    border-radius: 12px;
+    height: 45px;
+}

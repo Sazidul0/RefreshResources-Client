@@ -69,9 +69,9 @@ const InventoryItem = () => {
         <div className='pt-5'>
             <div className='inventory-container d-flex justify-content-around'>
                 <div>
-                    <Card style={{ width: '20rem' }}>
-                        <Card.Img variant="top" src={item.img} />
-                        <Card.Body>
+                    <Card style={{ width: '20rem' }} className="per-item-container shadow border-0 mb-3">
+                        <Card.Img variant="top" src={item.img} className='per-item-image' />
+                        <Card.Body className='mb-3 ms-3'>
                             <Card.Title>{item.name}</Card.Title>
                             <Card.Text>
                                 {item.description}
